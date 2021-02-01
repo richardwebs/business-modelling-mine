@@ -1,0 +1,26 @@
+<ng-container >
+  <div class="filter-group">
+    <input type="text" placeholder="search" [(ngModel)]="name" (keyup)="onInputChanged()" autocomplete="off" />
+  </div>
+
+  <div class="filter-group">
+    <div class="label">Tags</div>
+
+    <div class="filter-item" *ngFor="let item of tags;">
+      <input type="checkbox" name="item.name" [(ngModel)]="item.isSelected" (change)="onInputChanged()" />{{ item.name }}</div>
+  </div>
+
+  <div class="filter-group">
+    <div class="label">Other</div>
+
+    <div class="filter-item">
+      <input type="checkbox" name="familyFriendly" [(ngModel)]="isFamilyFriendly" (change)="onInputChanged()" />
+      Family friendly
+    </div>
+
+    <div class="filter-item">
+      <input type="checkbox" name="vegan" [(ngModel)]="isVeganFriendly" (change)="onInputChanged()" />
+      Vegan
+    </div>
+  </div>
+</ng-container>

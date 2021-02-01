@@ -1,0 +1,9 @@
+<div class="container">
+  <div class="filters">
+    <app-restaurant-filters (onFilterUpdated)="updateFilter($event)"></app-restaurant-filters>
+  </div>
+
+  <div class="content">
+    <app-restaurant-item *ngFor="let restaurant of restaurants" [restaurant]="restaurant" ></app-restaurant-item>
+  </div>
+</div>
